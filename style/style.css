@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 16px;
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+
+:root {
+  --width-primary: 150px;
+}
+
+body {
+  height: 100vh;
+  background-color: #161614;
+  cursor: url(../assets/click.png),
+    auto;
+  background: url(/assets/bgimage.jpg)
+    no-repeat;
+  background-size: cover;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: calc(560px - 15px * 2);
+  width: 100%;
+  padding: 0 15px;
+  transition: 0.5s;
+  margin-top: 50px;
+  border: 3px solid #ffffff73;
+  box-shadow: inset 0px 0px 20px 0px black;
+  border-radius: 5px;
+}
+
+.nav div {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.nav span {
+  color: #8f8f8f;
+  margin-left: 5px;
+}
+
+.nav * {
+  color: white;
+  font-size: 25px;
+}
+
+.nav img {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.level-opt {
+  text-align: center;
+  width: 300px;
+  text-transform: capitalize;
+  height: 40px;
+  margin-top: 10px;
+  width: 300px;
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.level-opt option {
+  background: rgb(63, 94, 251);
+  margin: 10px 0;
+}
+
+.Game-start {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+  position: relative;
+}
+
+.covi-gif {
+  max-height: 300px;
+  border-radius: 50%;
+}
+
+.btn-s {
+  margin-top: 30px;
+  width: 300px;
+  height: 40px;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+.span-effect {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: btnAnim 0.5s linear forwards;
+}
+
+.left {
+  transform: translateX(-100%);
+}
+
+@keyframes btnAnim {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+.Game-c {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.covi-i {
+  margin: 15px;
+  width: var(--width-primary);
+  height: var(--width-primary);
+  border-radius: 7px;
+  background-color: #161614;
+  background: url(../assets/cover.png),
+    no-repeat;
+  background-size: cover;
+}
+
+/* covi-i > img{
+  width: var(--width-primary);
+  height: var(--width-primary);
+  object-fit: contain;
+} */
+
+.crad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(var(--width-primary), 1fr));
+}
+
+.crad-grid img {
+  height: var(--width-primary);
+  width: var(--width-primary);
+  display: none;
+  object-fit: cover;
+}
+
+.clicked {
+  animation: clickAnim 0.5s ease-in-out both;
+}
+
+.Nclicked {
+  animation: NclickAnim 0.5s ease-in-out both;
+}
+
+@keyframes clickAnim {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(1, 3, 1, 360deg);
+  }
+}
+
+@keyframes NclickAnim {
+  0% {
+    transform: rotate3d(1, 3, 1, 360deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@-webkit-keyframes clickAnim {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(1, 3, 1, 360deg);
+  }
+}
+
+@-webkit-keyframes NclickAnim {
+  0% {
+    transform: rotate3d(1, 3, 1, 360deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+.win-section {
+  position: fixed;
+  bottom: -100px;
+  transform-origin: bottom;
+  transform: rotate(256deg);
+  display: flex;
+  gap: 90px;
+}
+
+.win-section div {
+  background: #ffffffc2;
+  border-radius: 20px;
+  box-shadow: 0px 0px 9px 7px red;
+  height: 800px;
+  width: 2px;
+}
+
+.monkey-liser {
+  position: fixed;
+  bottom: 0;
+  height: 500px;
+  transform: translateY(500px);
+}
+
+.monkey-liser img {
+  height: 500px;
+}
+
+.succ {
+  position: absolute;
+  z-index: 500;
+  transition: 0.5s;
+  opacity: 0;
+  display: none;
+  color: red;
+}
+
+.succ h1 {
+  text-transform: uppercase;
+  font-size: 80px;
+  color: white;
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+
+.win-scale {
+  animation: win-anim-scale 0.2s ease-in-out forwards;
+}
+
+.win-rotate {
+  animation: win-anim-rotate 2s forwards cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+.win-top {
+  animation: win-anim-tran 0.5s ease-out forwards;
+}
+
+.win-opa {
+  display: block;
+  animation: win-anim-opacity 0.5s ease-out forwards;
+}
+
+@keyframes win-anim-rotate {
+  0% {
+    transform: rotate(256deg);
+  }
+
+  20% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  80% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(-100deg);
+  }
+}
+
+@keyframes win-anim-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes win-anim-tran {
+  0% {
+    transform: translateY(500px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes win-anim-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* media query */
+
+@media (max-width: 768px) {
+  body {
+    background-size: auto;
+  }
+
+  .crad-grid {
+    grid-template-columns: repeat(3, minmax(var(--width-primary), 1fr));
+  }
+
+  :root {
+    --width-primary: 78px;
+  }
+
+  .succ h1 {
+    font-size: 50px;
+  }
+
+  .monkey-liser,
+  .monkey-liser img {
+    height: 400px;
+  }
+
+  .nav {
+    max-width: calc(323px - 15px * 2);
+    margin-top: 20px;
+  }
+
+  .covi-gif {
+    max-height: 200px;
+  }
+
+  .nav img {
+    height: 40px;
+  }
+
+  .nav * {
+    font-size: 20px;
+  }
+
+  .Game-c {
+    height: initial;
+    flex-direction: column-reverse;
+  }
+}
