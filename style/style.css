@@ -19,7 +19,7 @@ body {
   background-color: #161614;
   cursor: url(../assets/click.png),
     auto;
-  background: url(/assets/bgimage.jpg)
+  background: url(../assets/bgimage.jpg)
     no-repeat;
   background-size: cover;
 }
