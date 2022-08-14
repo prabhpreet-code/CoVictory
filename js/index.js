@@ -49,11 +49,11 @@ function creatGame(levelGame) {
   div.innerHTML += `
     <div class="nav">
                 <div class="time">
-                    <img src="../assets/timer.png"/>
+                    <img src="./assets/timer.png"/>
                     <p>-</p><span>s</span>
                 </div>       
                 <div class="try">
-                    <img src="../assets/chamces.png"/>
+                    <img src="./assets/chamces.png"/>
                     <p>-</p>
                 </div>           
     </div>`;
